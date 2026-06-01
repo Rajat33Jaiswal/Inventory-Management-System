@@ -20,6 +20,8 @@ The system features:
 - **Live Frontend URL**: [https://inventory-management-system-peach-rho.vercel.app/](https://inventory-management-system-peach-rho.vercel.app/)
 - **Live Backend API URL**: [https://inventory-backend-api-zwaf.onrender.com](https://inventory-backend-api-zwaf.onrender.com)
 
+⚠️ **Note**: The backend is hosted on Render's free tier and may take 60–90 seconds to wake up on the first visit. Please wait and refresh if the frontend shows "Offline".
+
 ---
 
 ## 📦 Local Setup with Docker Compose
