@@ -174,6 +174,9 @@ def delete_order(db: Session, order_id: int):
         return None
 
     try:
+        # Eagerly serialize to Pydantic before deleting the order
+        order_response = schemas.OrderResponse.model_validate(db_order)
+
         # Restore stock for each item
         for item in db_order.items:
             # Lock the product row for update
@@ -184,7 +187,7 @@ def delete_order(db: Session, order_id: int):
         # Delete the order (cascade deletes order_items automatically via foreign key/SQLAlchemy relationship config)
         db.delete(db_order)
         db.commit()
-        return db_order
+        return order_response
         
     except Exception as e:
         db.rollback()

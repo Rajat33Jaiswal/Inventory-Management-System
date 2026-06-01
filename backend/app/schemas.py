@@ -60,7 +60,7 @@ class OrderItemResponse(BaseModel):
 # --- Order Schemas ---
 class OrderCreate(BaseModel):
     customer_id: int
-    items: List[OrderItemCreate] = Field(..., min_items=1)
+    items: List[OrderItemCreate] = Field(..., min_length=1)
 
 class OrderResponse(BaseModel):
     id: int
