@@ -169,7 +169,7 @@ export default function Products({ products, onAdd, onUpdate, onDelete, showToas
                         </code>
                       </td>
                       <td style={{ textAlign: 'right', fontWeight: 600 }}>
-                        ${product.price.toFixed(2)}
+                        ₹{product.price.toFixed(2)}
                       </td>
                       <td style={{ textAlign: 'right', fontWeight: 600 }}>
                         {product.quantity}
@@ -253,7 +253,7 @@ export default function Products({ products, onAdd, onUpdate, onDelete, showToas
 
               {/* Price */}
               <div className="form-group">
-                <label htmlFor="prod-price">Price ($)</label>
+                <label htmlFor="prod-price">Price (₹)</label>
                 <input 
                   type="number" 
                   step="0.01"

@@ -214,7 +214,7 @@ export default function Orders({ orders, customers, products, onAdd, onDelete, s
                       </div>
                     </td>
                     <td style={{ textAlign: 'right', fontWeight: 700, color: 'var(--primary)' }}>
-                      ${order.total_amount.toFixed(2)}
+                      ₹{order.total_amount.toFixed(2)}
                     </td>
                     <td style={{ textAlign: 'center' }}>
                       <div style={{ display: 'flex', justifyContent: 'center', gap: '8px' }}>
@@ -294,7 +294,7 @@ export default function Orders({ orders, customers, products, onAdd, onDelete, s
                           <option value="">-- Product --</option>
                           {products.map(p => (
                             <option key={p.id} value={p.id} disabled={p.quantity === 0}>
-                              {p.name} (${p.price.toFixed(2)}) - {p.quantity} in stock {p.quantity === 0 && '(OUT)'}
+                              {p.name} (₹{p.price.toFixed(2)}) - {p.quantity} in stock {p.quantity === 0 && '(OUT)'}
                             </option>
                           ))}
                         </select>
@@ -336,7 +336,7 @@ export default function Orders({ orders, customers, products, onAdd, onDelete, s
               {/* Live Subtotal Visualizer */}
               <div className="order-summary-box">
                 <span>Total Amount:</span>
-                <span className="order-summary-total">${calculateLiveTotal().toFixed(2)}</span>
+                <span className="order-summary-total">₹{calculateLiveTotal().toFixed(2)}</span>
               </div>
             </div>
 
@@ -407,10 +407,10 @@ export default function Orders({ orders, customers, products, onAdd, onDelete, s
                               {item.product?.sku || 'N/A'}
                             </code>
                           </td>
-                          <td style={{ padding: '12px 16px', textAlign: 'right' }}>${item.price_at_order.toFixed(2)}</td>
+                          <td style={{ padding: '12px 16px', textAlign: 'right' }}>₹{item.price_at_order.toFixed(2)}</td>
                           <td style={{ padding: '12px 16px', textAlign: 'right' }}>{item.quantity}</td>
                           <td style={{ padding: '12px 16px', textAlign: 'right', fontWeight: 600 }}>
-                            ${(item.price_at_order * item.quantity).toFixed(2)}
+                            ₹{(item.price_at_order * item.quantity).toFixed(2)}
                           </td>
                         </tr>
                       ))}
@@ -423,7 +423,7 @@ export default function Orders({ orders, customers, products, onAdd, onDelete, s
               <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center', gap: '16px', padding: '0 8px' }}>
                 <span style={{ fontWeight: '600', color: 'var(--text-secondary)' }}>Grand Total:</span>
                 <span style={{ fontSize: '24px', fontWeight: '800', color: 'var(--primary)' }}>
-                  ${selectedOrder.total_amount.toFixed(2)}
+                  ₹{selectedOrder.total_amount.toFixed(2)}
                 </span>
               </div>
             </div>

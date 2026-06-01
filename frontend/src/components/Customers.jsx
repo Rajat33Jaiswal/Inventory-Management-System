@@ -43,8 +43,11 @@ export default function Customers({ customers, onAdd, onDelete, showToast }) {
 
     if (!phone.trim()) {
       errors.phone = 'Phone number is required';
-    } else if (phone.trim().length < 7) {
-      errors.phone = 'Please enter a valid phone number';
+    } else {
+      const phoneRegex = /^(?:\+91|0)?[6-9]\d{9}$/;
+      if (!phoneRegex.test(phone.trim().replace(/[-\s()]/g, ''))) {
+        errors.phone = 'Please enter a valid 10-digit Indian mobile number';
+      }
     }
 
     setFormErrors(errors);
@@ -204,7 +207,7 @@ export default function Customers({ customers, onAdd, onDelete, showToast }) {
                     type="text" 
                     id="cust-name"
                     className="form-control"
-                    placeholder="e.g. John Doe"
+                    placeholder="e.g. Rajesh Kumar"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                   />
@@ -219,7 +222,7 @@ export default function Customers({ customers, onAdd, onDelete, showToast }) {
                   type="email" 
                   id="cust-email"
                   className="form-control"
-                  placeholder="e.g. john.doe@example.com"
+                  placeholder="e.g. rajesh.kumar@example.in"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
@@ -233,7 +236,7 @@ export default function Customers({ customers, onAdd, onDelete, showToast }) {
                   type="text" 
                   id="cust-phone"
                   className="form-control"
-                  placeholder="e.g. +1 (555) 123-4567"
+                  placeholder="e.g. +91 98765 43210"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
                 />
