@@ -15,10 +15,10 @@ The system features:
 > [!IMPORTANT]
 > Once you push this project to your repository and deploy the services, please fill in your live URLs in place of the placeholders below:
 
-- **GitHub Repository**: [Insert GitHub Repository Link here]
-- **Docker Hub Image Link**: [Insert Docker Hub Image Link here] *(e.g. `docker.io/<your-username>/inventory-backend:latest`)*
-- **Live Frontend URL**: [Insert Live Frontend URL here] *(e.g. `https://stocksphere.vercel.app`)*
-- **Live Backend API URL**: [Insert Live Backend API URL here] *(e.g. `https://stocksphere-api.onrender.com`)*
+- **GitHub Repository**: [https://github.com/Rajat33Jaiswal/Inventory-Management-System](https://github.com/Rajat33Jaiswal/Inventory-Management-System)
+- **Docker Hub Image Link**: [https://hub.docker.com/r/rajatj11/inventory-backend](https://hub.docker.com/r/rajatj11/inventory-backend)
+- **Live Frontend URL**: [https://inventory-management-system-peach-rho.vercel.app/](https://inventory-management-system-peach-rho.vercel.app/)
+- **Live Backend API URL**: [https://inventory-backend-api-zwaf.onrender.com](https://inventory-backend-api-zwaf.onrender.com)
 
 ---
 
